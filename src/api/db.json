@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "memo": [
+        "32",
+        "64",
+        "128"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "MobilePhone",
+      "seoUrl": "Xioami"
+    },
+    {
+      "id": 2,
+      "categoryName": "Computer",
+      "seoUrl": "Computer"
+    }
+  ]
+}
