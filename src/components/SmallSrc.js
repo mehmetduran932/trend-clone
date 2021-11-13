@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
-import { product } from "../api/product";
+import { products } from "../api/product";
 export default function SmallSrc() {
   return (
     <div>
-      {product[0].image.map((p) => {
+      {products[0].image.map((p) => {
         return (
           <div className="yasla-hafiza">
             {" "}
