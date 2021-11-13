@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import Products from "./Products";
-import { product } from "../api/product";
+import { products } from "../api/product";
 import "../productList.css";
 export default function ProductBox() {
   return (
@@ -20,7 +20,7 @@ export default function ProductBox() {
           overflow="hidden"
         >
           <div className="container">
-            {product.map((p) => {
+            {products.map((p) => {
               return (
                 
                 <Products
