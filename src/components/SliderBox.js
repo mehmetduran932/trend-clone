@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
-export default function SliderBox() {
+
+export default function SliderBox({src}) {
   return (
     <div className="bosluklar">
       <Box
@@ -11,7 +12,7 @@ export default function SliderBox() {
         overflow="hidden"
       >
         <Image
-          src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty107/product/media/images/20210422/10/82049749/166328188/1/1_org_zoom.jpg"
+          src={src}
           alt="telefon"
         />
       </Box>
