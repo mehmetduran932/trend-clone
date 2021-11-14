@@ -1,21 +1,44 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "../App.css";
-import {
-  Box,
-  Flex,
-  Divider,
-  Stack,
-  Image,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Flex, Divider, Stack, Image, Button} from "@chakra-ui/react";
 import MemoBox from "./MemoBox";
 import SmallSrc from "./SmallSrc";
 import InsuranceBox from "./InsuranceBox";
+import { connect } from "react-redux";
+import { addToCart } from "../redux/actions/cartActions";
+import { products } from "../api/product";
+import { Link } from "react-router-dom";
 
-export default function TitleBox({id,name,mark,image,src,price,detail,memo}) {
-  console.log(id,name,mark,image,src,price,detail,memo)
+
+function TitleBox({
+  id,
+  name,
+  mark,
+  image,
+  src,
+  price,
+  detail,
+  memo,
+  cart,
+  addToCart,
+}) {
+  const [product, setProduct] = useState([]);
+  const addCart = () => {
+    console.log(product);
+    addToCart(product);
+    console.log("sepet:",cart)
+  };
+  
+  useEffect(() => {
+    let currentProduct = products.find((item) => item.id == id);
+    setProduct(currentProduct);
+  }, [product]);
+
+
   return (
+  
     <div className="title-box">
+      <h1><Link to={"/cartdetail"}>Sepete Git</Link></h1>
       <Box>
         <p>
           <a className="title-box-alti-cizili" href="https://www.trendyol.com/">
@@ -73,9 +96,15 @@ export default function TitleBox({id,name,mark,image,src,price,detail,memo}) {
       <div>
         <SmallSrc />
       </div>
-     <InsuranceBox/>
+      <InsuranceBox />
       <div className="sepete-ekle yasla-btn">
-        <Button colorScheme="orange" size="lg" height="50px" width="550px">
+        <Button
+          colorScheme="orange"
+          size="lg"
+          height="50px"
+          width="550px"
+          onClick={() => addCart(product)}
+        >
           Sepete Ekle
         </Button>
 
@@ -89,3 +118,9 @@ export default function TitleBox({id,name,mark,image,src,price,detail,memo}) {
     </div>
   );
 }
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+  };
+}
+export default connect(mapStateToProps, { addToCart })(TitleBox);
