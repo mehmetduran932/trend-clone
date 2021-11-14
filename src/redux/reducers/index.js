@@ -9,7 +9,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         cart: [action.payload, ...state.cart],
       };
-
     default:
       return state;
   }

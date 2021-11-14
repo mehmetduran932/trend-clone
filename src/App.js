@@ -1,6 +1,6 @@
 import "./App.css";
 import ProductBox from "./components/ProductBox";
-import {Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import MainBox from "./components/MainBox";
 import CartDetail from "./components/CartDetail";
