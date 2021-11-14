@@ -4,12 +4,19 @@ import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import { createStore } from "redux";
 
+import { reducer } from "./redux/reducers/index";
+import { Provider } from "react-redux";
+
+const store = createStore(reducer);
 ReactDOM.render(
-  <BrowserRouter>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
