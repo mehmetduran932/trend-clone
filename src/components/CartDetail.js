@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CartEmptyError from "./CartEmptyError";
 import CardSummary from "./CardSummary";
+import { removeFromCart } from "../redux/actions/cartActions";
 import {
   Box,
   Flex,
@@ -12,7 +13,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-function CartDetail({ cart }) {
+function CartDetail({ cart, removeFromCart }) {
   useEffect(() => {
     console.log("sepet:", cart);
   }, [cart]);
@@ -23,6 +24,11 @@ function CartDetail({ cart }) {
       </div>
     );
   }
+  const cartRemove = (cartItem) => {
+    let filtered = [];
+    filtered = cart.filter((item) => item !== cartItem);
+    removeFromCart(filtered);
+  };
   return (
     <div>
       <Flex color="black">
@@ -56,7 +62,12 @@ function CartDetail({ cart }) {
                 <Text color="orange">{cartItem.price}</Text>
               </Box>
               <Box flex="1" bg="white">
-                <Button h="50" mr="-px" color="orange">
+                <Button
+                  h="50"
+                  mr="-px"
+                  color="orange"
+                  onClick={() => cartRemove(cartItem)}
+                >
                   X
                 </Button>
               </Box>
@@ -76,4 +87,4 @@ function mapStateToProps(state) {
     cart: state.cart,
   };
 }
-export default connect(mapStateToProps)(CartDetail);
+export default connect(mapStateToProps, { removeFromCart })(CartDetail);

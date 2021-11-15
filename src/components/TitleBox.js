@@ -7,18 +7,8 @@ import InsuranceBox from "./InsuranceBox";
 import { connect } from "react-redux";
 import { addToCart } from "../redux/actions/cartActions";
 import { products } from "../api/product";
-import { Link } from "react-router-dom";
 
-function TitleBox({
-  id,
-  name,
-  mark,
-  price,
-  detail,
-  memo,
-  cart,
-  addToCart,
-}) {
+function TitleBox({ id, name, mark, price, detail, memo, cart, addToCart }) {
   const [product, setProduct] = useState([]);
   const addCart = () => {
     console.log(product);
@@ -33,9 +23,6 @@ function TitleBox({
 
   return (
     <div className="title-box">
-      <h1>
-        <Link to={"/cartdetail"}>Sepete Git</Link>
-      </h1>
       <Box>
         <p>
           <a className="title-box-alti-cizili" href="https://www.trendyol.com/">
