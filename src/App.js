@@ -6,11 +6,13 @@ import MainBox from "./components/MainBox";
 import CartDetail from "./components/CartDetail";
 import Header from "./components/Header";
 import { Flex, Box } from "@chakra-ui/react";
+import NaviBox from "./components/NaviBox";
 
 function App() {
   return (
     <div>
       <Header />
+      <NaviBox/>
       <Flex color="white">
         <Box flex="1">
           
