@@ -14,7 +14,7 @@ export default function ProductBox() {
           flex="3"
           bg="white"
           width="1100px"
-          height="900px"
+          height="500px"
           border="groove"
           borderRadius="lg"
           overflow="hidden"
@@ -22,7 +22,6 @@ export default function ProductBox() {
           <div className="container">
             {products.map((p) => {
               return (
-                
                 <Products
                   id={p.id}
                   name={p.productName}
@@ -33,7 +32,6 @@ export default function ProductBox() {
                   detail={p.detail}
                   memo={p.memo}
                 />
-                
               );
             })}
           </div>

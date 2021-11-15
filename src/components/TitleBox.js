@@ -1,6 +1,6 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
-import { Box, Flex, Divider, Stack, Image, Button} from "@chakra-ui/react";
+import { Box, Flex, Divider, Stack, Image, Button } from "@chakra-ui/react";
 import MemoBox from "./MemoBox";
 import SmallSrc from "./SmallSrc";
 import InsuranceBox from "./InsuranceBox";
@@ -9,13 +9,10 @@ import { addToCart } from "../redux/actions/cartActions";
 import { products } from "../api/product";
 import { Link } from "react-router-dom";
 
-
 function TitleBox({
   id,
   name,
   mark,
-  image,
-  src,
   price,
   detail,
   memo,
@@ -26,19 +23,19 @@ function TitleBox({
   const addCart = () => {
     console.log(product);
     addToCart(product);
-    console.log("sepet:",cart)
+    console.log("sepet:", cart);
   };
-  
+
   useEffect(() => {
     let currentProduct = products.find((item) => item.id == id);
     setProduct(currentProduct);
   }, [product]);
 
-
   return (
-  
     <div className="title-box">
-      <h1><Link to={"/cartdetail"}>Sepete Git</Link></h1>
+      <h1>
+        <Link to={"/cartdetail"}>Sepete Git</Link>
+      </h1>
       <Box>
         <p>
           <a className="title-box-alti-cizili" href="https://www.trendyol.com/">

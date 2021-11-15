@@ -16,7 +16,7 @@ export default function MainBox({ ...props }) {
   return (
     <div className="ust-bosluk">
       {product && (
-        <Flex border="1px groove gray" borderRadius="lg">
+        <Flex border="1px groove gray" borderRadius="lg" w="1300px">
           <Box
             p="4"
             h="800px"

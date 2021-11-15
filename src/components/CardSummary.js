@@ -30,7 +30,7 @@ function CardSummary({ cart }) {
             <h1>Ürün Toplamı {count} TL</h1>
             <h1>Kargo Toplam </h1>
             <Divider w="300px" orientation="horizontal" />
-            <h1>Sepet Toplamı </h1>
+            <h1>Sepet Toplamı {count} TL</h1>
           </Box>
 
           <Spacer />
