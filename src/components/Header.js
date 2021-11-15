@@ -27,7 +27,7 @@ export default function Header() {
             <Text>Hesabım</Text>
           </Box>
           <Box p="2" bg="white">
-            <Text>Fovorilerim</Text>
+            <Text>Favorilerim</Text>
           </Box>
           <Box p="2" bg="white">
           <Link to="/CartDetail"><Text>Sepetim</Text></Link>
