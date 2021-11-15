@@ -8,16 +8,12 @@ function CardSummary({ cart }) {
 
   useEffect(() => {
    
-    console.log("p",count)
-
-    totalPrice();
+    let totalPrice = 0;
+    cart.map((p) => (totalPrice += p.price));
+    setCount(totalPrice);
   }, [count]);
 
-  async function totalPrice(count) {
-    cart.map((p)=>(
-        setCount(count+=p.price)
-    ))
-  }
+ 
   return (
     <div>
       <Box
