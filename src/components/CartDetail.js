@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import CartEmptyError from "./CartEmptyError";
 import CardSummary from "./CardSummary";
-import { Box, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  HStack,
+  Checkbox,
+  Button,
+} from "@chakra-ui/react";
 
 function CartDetail({ cart }) {
   useEffect(() => {
@@ -23,32 +30,45 @@ function CartDetail({ cart }) {
           <h1>Box 1</h1>
         </Box>
         <Box flex="3" bg="white">
-          <Table variant="simple">
-            <Thead>
-              <Tr>
-                <Th>#</Th>
-                <Th>Product Name</Th>
-                <Th>Unit Price</Th>
-                <Th>Quantity</Th>
+          {cart.map((cartItem) => (
+            <Flex color="black" border="2px groove gray">
+              <Box flex="1" bg="white">
+                <HStack spacing={10} direction="row">
+                  <Checkbox size="lg" colorScheme="orange"></Checkbox>
+                </HStack>
+              </Box>
+              <Box flex="1" bg="white">
+                <Image src={cartItem.src} h="75" w="100" />
+              </Box>
+              <Box flex="1" bg="white">
+                <Text> {cartItem.productName}</Text>
+              </Box>
+              <Box flex="1" bg="white">
+                <Button h="50" mr="-px" color="orange">
+                  -
+                </Button>
+                <Button h="50" mr="-px" color="black">
+                  0
+                </Button>
+                <Button h="50" mr="-px" color="orange">
+                  +
+                </Button>
+              </Box>
 
-                <Th></Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {cart.map((cartItem) => (
-                <Tr>
-                  <Th scope="row">{cartItem.id}</Th>
-                  <Td>{cartItem.productName}</Td>
-                  <Td>{cartItem.price}</Td>
-                  <Td>{cartItem.quantity}</Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
+              <Box flex="1" bg="white">
+                <Text color="orange">{cartItem.price}</Text>
+              </Box>
+              <Box flex="1" bg="white">
+              <Button h="50" mr="-px" color="orange">
+                  X
+                </Button>
+              </Box>
+            </Flex>
+          ))}
         </Box>
 
         <Box flex="1" bg="white">
-          <CardSummary/>
+          <CardSummary />
         </Box>
       </Flex>
     </div>
