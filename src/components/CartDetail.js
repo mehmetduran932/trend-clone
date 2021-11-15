@@ -26,12 +26,9 @@ function CartDetail({ cart }) {
   return (
     <div>
       <Flex color="black">
-        <Box flex="1" bg="white">
-          <h1>Box 1</h1>
-        </Box>
         <Box flex="3" bg="white">
           {cart.map((cartItem) => (
-            <Flex color="black" border="2px groove gray">
+            <Flex color="black" border="2px groove gray" w="1000px">
               <Box flex="1" bg="white">
                 <HStack spacing={10} direction="row">
                   <Checkbox size="lg" colorScheme="orange"></Checkbox>
@@ -59,7 +56,7 @@ function CartDetail({ cart }) {
                 <Text color="orange">{cartItem.price}</Text>
               </Box>
               <Box flex="1" bg="white">
-              <Button h="50" mr="-px" color="orange">
+                <Button h="50" mr="-px" color="orange">
                   X
                 </Button>
               </Box>
