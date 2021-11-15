@@ -7,9 +7,6 @@ export default function ProductBox() {
   return (
     <div>
       <Flex color="black">
-        <Box flex="1" bg="white" width="100px" height="900px">
-          <h1>Kategoriler ve Filtreler Buraya</h1>
-        </Box>
         <Box
           flex="3"
           bg="white"
@@ -35,9 +32,6 @@ export default function ProductBox() {
               );
             })}
           </div>
-        </Box>
-        <Box flex="1" bg="white" width="100px" height="900px">
-          <h1>Burası Boş kalabilir</h1>
         </Box>
       </Flex>
     </div>

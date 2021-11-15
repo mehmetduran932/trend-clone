@@ -92,3 +92,7 @@ a:hover {
   padding-left: 5px;
 
 }
+.header-ortala{
+  margin-left: auto; margin-right: auto;
+	display:table;
+}
