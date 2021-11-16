@@ -15,7 +15,6 @@ import {
 
 function CartDetail({ cart, removeFromCart }) {
   useEffect(() => {
-    console.log("sepet:", cart);
   }, [cart]);
   if (cart.length === 0) {
     return (
@@ -51,7 +50,7 @@ function CartDetail({ cart, removeFromCart }) {
                   -
                 </Button>
                 <Button h="50" mr="-px" color="black">
-                  0
+                  {cartItem.quantity}
                 </Button>
                 <Button h="50" mr="-px" color="orange">
                   +

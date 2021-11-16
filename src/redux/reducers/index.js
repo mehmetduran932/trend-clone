@@ -9,6 +9,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         cart: [action.payload, ...state.cart],
       };
+
     case "REMOVE_FROM_CART":
       return {
         ...state,

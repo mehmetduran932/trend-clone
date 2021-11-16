@@ -10,10 +10,9 @@ import { products } from "../api/product";
 
 function TitleBox({ id, name, mark, price, detail, memo, cart, addToCart }) {
   const [product, setProduct] = useState([]);
+
   const addCart = () => {
-    console.log(product);
     addToCart(product);
-    console.log("sepet:", cart);
   };
 
   useEffect(() => {

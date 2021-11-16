@@ -12,7 +12,7 @@ export default function CartEmptyError() {
         borderRadius="lg"
         overflow="hidden"
       >
-        <Flex>
+        <Flex color="black">
           <Box p="4" bg="orange.100" borderRadius="full">
             <Image
               borderRadius="full"
