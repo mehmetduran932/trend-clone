@@ -12,6 +12,7 @@ export const products = [
       "https://cdn.akakce.com/xiaomi/xiaomi-redmi-note-10-pro-128-gb-8-gb-mavi-z.jpg",
       "https://cdn.akakce.com/xiaomi/xiaomi-redmi-note-10-pro-128-gb-8-gb-mavi-z.jpg",
     ],
+    quantity: 1,
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const products = [
       "https://productimages.hepsiburada.net/s/32/375/10356113637426.jpg",
       "https://productimages.hepsiburada.net/s/32/375/10356113637426.jpg",
     ],
+    quantity: 1,
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ export const products = [
       "https://cdn.akakce.com/xiaomi/xiaomi-redmi-note-10-pro-128-gb-8-gb-mavi-z.jpg",
       "https://cdn.akakce.com/xiaomi/xiaomi-redmi-note-10-pro-128-gb-8-gb-mavi-z.jpg",
     ],
+    quantity: 1,
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ export const products = [
       "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000",
       "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000",
     ],
+    quantity: 1,
   },
   {
     id: 5,
@@ -68,6 +72,7 @@ export const products = [
       "https://cdn.akakce.com/samsung/samsung-galaxy-s20-128-gb-z.jpg",
       "https://cdn.akakce.com/samsung/samsung-galaxy-s20-128-gb-z.jpg",
     ],
+    quantity: 1,
   },
   {
     id: 6,
@@ -82,5 +87,6 @@ export const products = [
       "https://cdn.akakce.com/huawei/huawei-p40-128-gb-z.jpg",
       "https://cdn.akakce.com/huawei/huawei-p40-128-gb-z.jpg",
     ],
+    quantity: 1,
   },
 ];

@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { addToCart } from "../redux/actions/cartActions";
 import { products } from "../api/product";
 
-function TitleBox({ id, name, mark, price, detail, memo, cart, addToCart }) {
+function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
   const [product, setProduct] = useState([]);
 
   const addCart = () => {
@@ -103,7 +103,7 @@ function TitleBox({ id, name, mark, price, detail, memo, cart, addToCart }) {
 }
 function mapStateToProps(state) {
   return {
-    cart: state.cart,
+    carts: state.cart,
   };
 }
 export default connect(mapStateToProps, { addToCart })(TitleBox);
