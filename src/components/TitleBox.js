@@ -24,17 +24,23 @@ import InsuranceBox from "./InsuranceBox";
 import { connect } from "react-redux";
 import { addToCart } from "../redux/actions/cartActions";
 import { products } from "../api/product";
+import AddToCartError from "./AddToCartError";
 
 function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
   const [product, setProduct] = useState([]);
   const [count, setCount] = useState(0);
+  const [addErr, setAddErr] = useState(false);
 
   const addCart = () => {
     if (count < 3) {
       addToCart(product);
       setCount(count + 1);
+      setAddErr(false);
     } else {
       console.log("3ten fazla ürün ekleyemezsiniz");
+      setAddErr(true); 
+      setTimeout(function(){ setAddErr(false); }, 3000);
+     
     }
   };
 
@@ -137,7 +143,9 @@ function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
         <Button className="btn-sağ" height="50px" width="40px">
           Kalp
         </Button>
+        <div>{addErr && <AddToCartError />}</div>
       </div>
+      
       <div className="txt-margin">
         <p>Tahmini Kargoya Teslim: 6 gün içinde</p>
       </div>
