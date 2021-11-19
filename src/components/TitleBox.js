@@ -1,6 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { Box, Flex, Divider, Stack, Image, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Divider,
+  Stack,
+  Image,
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  ButtonGroup,
+  PopoverCloseButton,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import MemoBox from "./MemoBox";
 import SmallSrc from "./SmallSrc";
 import InsuranceBox from "./InsuranceBox";
@@ -81,15 +98,33 @@ function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
       </div>
       <InsuranceBox />
       <div className="sepete-ekle yasla-btn">
-        <Button
-          colorScheme="orange"
-          size="lg"
-          height="50px"
-          width="550px"
-          onClick={() => addCart(product)}
-        >
-          Sepete Ekle
-        </Button>
+        <Popover>
+          <PopoverTrigger>
+            <Button
+              colorScheme="orange"
+              size="lg"
+              height="50px"
+              width="550px"
+              onClick={() => addCart(product)}
+            >
+              Sepete Ekle
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader>Ürün Sepetinize Eklendi...</PopoverHeader>
+            <PopoverBody>
+              Ürün Eklendi...
+            </PopoverBody>
+            <PopoverFooter d="flex" justifyContent="flex-end">
+            <ButtonGroup size="sm">
+            <Link to="/"><Button variant="outline">Alışverişe devam et...</Button></Link>
+            <Link to="/CartDetail"><Button colorScheme="red">Sepete Git...</Button></Link>
+            </ButtonGroup>
+          </PopoverFooter>
+          </PopoverContent>
+        </Popover>
 
         <Button className="btn-sağ" height="50px" width="40px">
           Kalp
