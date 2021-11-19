@@ -17,7 +17,7 @@ function CartDetail({ carts, removeFromCart }) {
   const [currentCarts, setCurrentCarts] = useState([]);
 
   useEffect(() => {
-    if (carts.length > 0) {
+    if (carts.length >= 0) {
       setCurrentCarts(carts);
     }
   }, [carts]);
@@ -26,6 +26,7 @@ function CartDetail({ carts, removeFromCart }) {
     let filtered = [];
     filtered = currentCarts.filter((item) => item !== cartItem);
     removeFromCart(filtered);
+    console.log("cart", carts);
   };
 
   const decrease = (cartItem) => {
