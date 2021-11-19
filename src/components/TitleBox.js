@@ -27,9 +27,15 @@ import { products } from "../api/product";
 
 function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
   const [product, setProduct] = useState([]);
+  const [count, setCount] = useState(0);
 
   const addCart = () => {
-    addToCart(product);
+    if (count < 3) {
+      addToCart(product);
+      setCount(count + 1);
+    } else {
+      console.log("3ten fazla ürün ekleyemezsiniz");
+    }
   };
 
   useEffect(() => {
@@ -114,15 +120,17 @@ function TitleBox({ id, name, mark, price, detail, memo, carts, addToCart }) {
             <PopoverArrow />
             <PopoverCloseButton />
             <PopoverHeader>Ürün Sepetinize Eklendi...</PopoverHeader>
-            <PopoverBody>
-              Ürün Eklendi...
-            </PopoverBody>
+            <PopoverBody>Ürün Eklendi...</PopoverBody>
             <PopoverFooter d="flex" justifyContent="flex-end">
-            <ButtonGroup size="sm">
-            <Link to="/"><Button variant="outline">Alışverişe devam et...</Button></Link>
-            <Link to="/CartDetail"><Button colorScheme="red">Sepete Git...</Button></Link>
-            </ButtonGroup>
-          </PopoverFooter>
+              <ButtonGroup size="sm">
+                <Link to="/">
+                  <Button variant="outline">Alışverişe devam et...</Button>
+                </Link>
+                <Link to="/CartDetail">
+                  <Button colorScheme="red">Sepete Git...</Button>
+                </Link>
+              </ButtonGroup>
+            </PopoverFooter>
           </PopoverContent>
         </Popover>
 
